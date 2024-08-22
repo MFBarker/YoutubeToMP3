@@ -262,13 +262,22 @@
             comboBox1.Size = new Size(244, 33);
             comboBox1.TabIndex = 21;
             comboBox1.DataSource = new string[]
-            {    
+            {   
+                //Audio Files
                 "MP3",
                 "OOG",
                 "AAC",
                 "WAV",
                 "FLAC",
+                "M4A",
+                "WMA",
+                "ALAC",
+                //Video Files
                 "MP4",
+                "AVI",
+                "MKV",
+                "MOV",
+                "FLV",
                 "WEBM"
             };
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
