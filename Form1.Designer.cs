@@ -43,14 +43,12 @@
             clearButton = new Button();
             urlListBox = new ListBox();
             fileTypeLabel = new Label();
-            mp3Radio = new RadioButton();
-            opusRadio = new RadioButton();
             pictureBox2 = new PictureBox();
             toolTip1 = new ToolTip(components);
-            aacRadio = new RadioButton();
             thumbnailCheckbox = new CheckBox();
             addButton = new Button();
             button1 = new Button();
+            comboBox1 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -59,9 +57,10 @@
             // urlBox
             // 
             urlBox.BorderStyle = BorderStyle.FixedSingle;
-            urlBox.Location = new Point(64, 172);
+            urlBox.Location = new Point(91, 287);
+            urlBox.Margin = new Padding(4, 5, 4, 5);
             urlBox.Name = "urlBox";
-            urlBox.Size = new Size(379, 23);
+            urlBox.Size = new Size(541, 31);
             urlBox.TabIndex = 1;
             // 
             // downloadButton
@@ -71,9 +70,10 @@
             downloadButton.FlatStyle = FlatStyle.Flat;
             downloadButton.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             downloadButton.Image = (Image)resources.GetObject("downloadButton.Image");
-            downloadButton.Location = new Point(467, 206);
+            downloadButton.Location = new Point(667, 343);
+            downloadButton.Margin = new Padding(4, 5, 4, 5);
             downloadButton.Name = "downloadButton";
-            downloadButton.Size = new Size(105, 59);
+            downloadButton.Size = new Size(150, 98);
             downloadButton.TabIndex = 2;
             toolTip1.SetToolTip(downloadButton, "Download All");
             downloadButton.UseVisualStyleBackColor = false;
@@ -82,9 +82,10 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(12, 38);
+            pictureBox1.Location = new Point(17, 63);
+            pictureBox1.Margin = new Padding(4, 5, 4, 5);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(262, 110);
+            pictureBox1.Size = new Size(374, 183);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
@@ -92,10 +93,12 @@
             // 
             // menuStrip1
             // 
+            menuStrip1.ImageScalingSize = new Size(24, 24);
             menuStrip1.Items.AddRange(new ToolStripItem[] { helpToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(584, 24);
+            menuStrip1.Padding = new Padding(9, 3, 0, 3);
+            menuStrip1.Size = new Size(826, 34);
             menuStrip1.TabIndex = 5;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -104,7 +107,7 @@
             helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { darkModeToolStripMenuItem, checkForUpdateToolStripMenuItem, aboutToolStripMenuItem });
             helpToolStripMenuItem.Image = (Image)resources.GetObject("helpToolStripMenuItem.Image");
             helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            helpToolStripMenuItem.Size = new Size(28, 20);
+            helpToolStripMenuItem.Size = new Size(40, 28);
             helpToolStripMenuItem.ToolTipText = "Help";
             helpToolStripMenuItem.Click += helpToolStripMenuItem_Click;
             // 
@@ -112,7 +115,7 @@
             // 
             darkModeToolStripMenuItem.Image = (Image)resources.GetObject("darkModeToolStripMenuItem.Image");
             darkModeToolStripMenuItem.Name = "darkModeToolStripMenuItem";
-            darkModeToolStripMenuItem.Size = new Size(165, 22);
+            darkModeToolStripMenuItem.Size = new Size(250, 34);
             darkModeToolStripMenuItem.Text = "Dark Mode";
             darkModeToolStripMenuItem.Click += darkModeToolStripMenuItem_Click;
             // 
@@ -120,7 +123,7 @@
             // 
             checkForUpdateToolStripMenuItem.Image = (Image)resources.GetObject("checkForUpdateToolStripMenuItem.Image");
             checkForUpdateToolStripMenuItem.Name = "checkForUpdateToolStripMenuItem";
-            checkForUpdateToolStripMenuItem.Size = new Size(165, 22);
+            checkForUpdateToolStripMenuItem.Size = new Size(250, 34);
             checkForUpdateToolStripMenuItem.Text = "Check for update";
             checkForUpdateToolStripMenuItem.Click += checkForUpdateToolStripMenuItem_Click;
             // 
@@ -128,16 +131,17 @@
             // 
             aboutToolStripMenuItem.Image = (Image)resources.GetObject("aboutToolStripMenuItem.Image");
             aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size = new Size(165, 22);
+            aboutToolStripMenuItem.Size = new Size(250, 34);
             aboutToolStripMenuItem.Text = "About";
             aboutToolStripMenuItem.Click += aboutToolStripMenuItem_Click;
             // 
             // progressBar
             // 
             progressBar.BackColor = Color.White;
-            progressBar.Location = new Point(12, 306);
+            progressBar.Location = new Point(17, 510);
+            progressBar.Margin = new Padding(4, 5, 4, 5);
             progressBar.Name = "progressBar";
-            progressBar.Size = new Size(560, 43);
+            progressBar.Size = new Size(800, 72);
             progressBar.TabIndex = 6;
             toolTip1.SetToolTip(progressBar, "Download Progress");
             // 
@@ -148,9 +152,10 @@
             downloadSingleButton.FlatStyle = FlatStyle.Flat;
             downloadSingleButton.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             downloadSingleButton.Image = (Image)resources.GetObject("downloadSingleButton.Image");
-            downloadSingleButton.Location = new Point(492, 163);
+            downloadSingleButton.Location = new Point(703, 272);
+            downloadSingleButton.Margin = new Padding(4, 5, 4, 5);
             downloadSingleButton.Name = "downloadSingleButton";
-            downloadSingleButton.Size = new Size(37, 37);
+            downloadSingleButton.Size = new Size(53, 62);
             downloadSingleButton.TabIndex = 7;
             toolTip1.SetToolTip(downloadSingleButton, "Download Single");
             downloadSingleButton.UseVisualStyleBackColor = false;
@@ -163,9 +168,10 @@
             clearButton.FlatStyle = FlatStyle.Flat;
             clearButton.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             clearButton.Image = (Image)resources.GetObject("clearButton.Image");
-            clearButton.Location = new Point(535, 163);
+            clearButton.Location = new Point(764, 272);
+            clearButton.Margin = new Padding(4, 5, 4, 5);
             clearButton.Name = "clearButton";
-            clearButton.Size = new Size(37, 37);
+            clearButton.Size = new Size(53, 62);
             clearButton.TabIndex = 8;
             toolTip1.SetToolTip(clearButton, "Clear");
             clearButton.UseVisualStyleBackColor = false;
@@ -174,10 +180,11 @@
             // urlListBox
             // 
             urlListBox.FormattingEnabled = true;
-            urlListBox.ItemHeight = 15;
-            urlListBox.Location = new Point(12, 206);
+            urlListBox.ItemHeight = 25;
+            urlListBox.Location = new Point(17, 343);
+            urlListBox.Margin = new Padding(4, 5, 4, 5);
             urlListBox.Name = "urlListBox";
-            urlListBox.Size = new Size(440, 94);
+            urlListBox.Size = new Size(627, 154);
             urlListBox.TabIndex = 9;
             toolTip1.SetToolTip(urlListBox, "List of URLs");
             // 
@@ -185,60 +192,24 @@
             // 
             fileTypeLabel.AutoSize = true;
             fileTypeLabel.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            fileTypeLabel.Location = new Point(288, 75);
+            fileTypeLabel.Location = new Point(411, 125);
+            fileTypeLabel.Margin = new Padding(4, 0, 4, 0);
             fileTypeLabel.Name = "fileTypeLabel";
-            fileTypeLabel.Size = new Size(77, 21);
+            fileTypeLabel.Size = new Size(121, 32);
             fileTypeLabel.TabIndex = 10;
             fileTypeLabel.Text = "File Type :";
-            // 
-            // mp3Radio
-            // 
-            mp3Radio.AutoSize = true;
-            mp3Radio.Checked = true;
-            mp3Radio.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            mp3Radio.Location = new Point(376, 76);
-            mp3Radio.Name = "mp3Radio";
-            mp3Radio.Size = new Size(55, 21);
-            mp3Radio.TabIndex = 13;
-            mp3Radio.TabStop = true;
-            mp3Radio.Text = ".MP3";
-            toolTip1.SetToolTip(mp3Radio, "MPEG-1 Audio Layer III");
-            mp3Radio.UseVisualStyleBackColor = true;
-            // 
-            // opusRadio
-            // 
-            opusRadio.AutoSize = true;
-            opusRadio.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            opusRadio.Location = new Point(445, 76);
-            opusRadio.Name = "opusRadio";
-            opusRadio.Size = new Size(57, 21);
-            opusRadio.TabIndex = 14;
-            opusRadio.Text = ".OGG";
-            toolTip1.SetToolTip(opusRadio, "Ogg Vorbis");
-            opusRadio.UseVisualStyleBackColor = true;
             // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(12, 154);
+            pictureBox2.Location = new Point(17, 257);
+            pictureBox2.Margin = new Padding(4, 5, 4, 5);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(50, 50);
+            pictureBox2.Size = new Size(71, 83);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 15;
             pictureBox2.TabStop = false;
             toolTip1.SetToolTip(pictureBox2, "URL(s)");
-            // 
-            // aacRadio
-            // 
-            aacRadio.AutoSize = true;
-            aacRadio.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            aacRadio.Location = new Point(508, 76);
-            aacRadio.Name = "aacRadio";
-            aacRadio.Size = new Size(53, 21);
-            aacRadio.TabIndex = 16;
-            aacRadio.Text = ".AAC";
-            toolTip1.SetToolTip(aacRadio, "Advanced Audio Coding");
-            aacRadio.UseVisualStyleBackColor = true;
             // 
             // thumbnailCheckbox
             // 
@@ -246,9 +217,10 @@
             thumbnailCheckbox.CheckAlign = ContentAlignment.MiddleRight;
             thumbnailCheckbox.Enabled = false;
             thumbnailCheckbox.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            thumbnailCheckbox.Location = new Point(288, 112);
+            thumbnailCheckbox.Location = new Point(411, 187);
+            thumbnailCheckbox.Margin = new Padding(4, 5, 4, 5);
             thumbnailCheckbox.Name = "thumbnailCheckbox";
-            thumbnailCheckbox.Size = new Size(103, 25);
+            thumbnailCheckbox.Size = new Size(154, 36);
             thumbnailCheckbox.TabIndex = 18;
             thumbnailCheckbox.Text = "Thumbnail";
             toolTip1.SetToolTip(thumbnailCheckbox, "Thumbnail of Video");
@@ -261,9 +233,10 @@
             addButton.FlatStyle = FlatStyle.Flat;
             addButton.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             addButton.Image = (Image)resources.GetObject("addButton.Image");
-            addButton.Location = new Point(449, 163);
+            addButton.Location = new Point(641, 272);
+            addButton.Margin = new Padding(4, 5, 4, 5);
             addButton.Name = "addButton";
-            addButton.Size = new Size(37, 37);
+            addButton.Size = new Size(53, 62);
             addButton.TabIndex = 19;
             toolTip1.SetToolTip(addButton, "Add to list");
             addButton.UseVisualStyleBackColor = false;
@@ -271,27 +244,45 @@
             // 
             // button1
             // 
-            button1.Location = new Point(467, 271);
+            button1.Location = new Point(667, 452);
+            button1.Margin = new Padding(4, 5, 4, 5);
             button1.Name = "button1";
-            button1.Size = new Size(105, 23);
+            button1.Size = new Size(150, 38);
             button1.TabIndex = 20;
             button1.Text = "Remove URL";
             toolTip1.SetToolTip(button1, "Remove Selected URL");
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(539, 128);
+            comboBox1.Name = "fileTypeDropDown";
+            comboBox1.Size = new Size(244, 33);
+            comboBox1.TabIndex = 21;
+            comboBox1.DataSource = new string[]
+            {    
+                "MP3",
+                "OOG",
+                "AAC",
+                "WAV",
+                "FLAC",
+                "MP4",
+                "WEBM"
+            };
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(584, 361);
+            ClientSize = new Size(826, 573);
+            Controls.Add(comboBox1);
             Controls.Add(button1);
             Controls.Add(addButton);
             Controls.Add(thumbnailCheckbox);
-            Controls.Add(aacRadio);
             Controls.Add(pictureBox2);
-            Controls.Add(opusRadio);
-            Controls.Add(mp3Radio);
             Controls.Add(fileTypeLabel);
             Controls.Add(urlListBox);
             Controls.Add(clearButton);
@@ -304,9 +295,10 @@
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
+            Margin = new Padding(4, 5, 4, 5);
             MaximizeBox = false;
-            MaximumSize = new Size(600, 400);
-            MinimumSize = new Size(600, 400);
+            MaximumSize = new Size(848, 629);
+            MinimumSize = new Size(848, 629);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "YouTube → MP3, OGG, AAC";
@@ -332,14 +324,12 @@
         private Button clearButton;
         private ListBox urlListBox;
         private Label fileTypeLabel;
-        private RadioButton mp3Radio;
-        private RadioButton opusRadio;
         private PictureBox pictureBox2;
         private ToolTip toolTip1;
-        private RadioButton aacRadio;
         private CheckBox thumbnailCheckbox;
         private ToolStripMenuItem darkModeToolStripMenuItem;
         private Button addButton;
         private Button button1;
+        private ComboBox comboBox1;
     }
 }

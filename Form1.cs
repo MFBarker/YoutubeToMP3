@@ -16,6 +16,17 @@ namespace YoutubeToMP3
         private string repoName = "YoutubeToMP3"; // Replace with your repository name
         string currentVersion;
 
+        List<string> fileTypes = new List<string> 
+        {
+            "mp3",
+            "oog",
+            "aac",
+            "wav",
+            "flac",
+            "mp4",
+            "webm"
+        };
+
         Downloads download = new Downloads();
         public Form1()
         {
@@ -27,20 +38,7 @@ namespace YoutubeToMP3
 
         private async void downloadButton_ClickAsync(object sender, EventArgs e)
         {
-            string fileType = "";
-
-            if (mp3Radio.Checked)
-            {
-                fileType = "mp3"; // Define your file type for radioButton1
-            }
-            else if (opusRadio.Checked)
-            {
-                fileType = "ogg"; // Define your file type for radioButton2
-            }
-            else if (aacRadio.Checked)
-            {
-                fileType = "aac"; // Define your file type for radioButton3
-            }
+            string fileType = comboBox1.SelectedItem.ToString().ToLower(); //= "";
 
             List<string> urls = new List<string>();
             foreach (var item in urlListBox.Items)
@@ -114,7 +112,8 @@ namespace YoutubeToMP3
             urlBox.Text = string.Empty;
             urlListBox.Items.Clear();
             thumbnailCheckbox.Checked = false;
-            mp3Radio.Checked = true;
+            //mp3Radio.Checked = true;
+            comboBox1.SelectedValue = "mp3";
         }
         private bool isDarkMode = false;
 
@@ -272,28 +271,13 @@ namespace YoutubeToMP3
 
         private void downloadSingleButton_Click(object sender, EventArgs e)
         {
-            string fileType = "";
-
-            if (mp3Radio.Checked)
-            {
-                fileType = "mp3"; // Define your file type for radioButton1
-            }
-            else if (opusRadio.Checked)
-            {
-                fileType = "ogg"; // Define your file type for radioButton2
-            }
-            else if (aacRadio.Checked)
-            {
-                fileType = "aac"; // Define your file type for radioButton3
-            }
+            string fileType = comboBox1.SelectedItem.ToString().ToLower(); //"";
 
             // Check if the thumbnail should be downloaded
             bool downloadThumbnail = thumbnailCheckbox.Checked;
 
             // Call the download method with the selected file type and thumbnail option
             download.DownloadAsync(urlBox.Text, progressBar, fileType);
-
-
         }
 
         private void button1_Click(object sender, EventArgs e)
