@@ -43,11 +43,8 @@
             clearButton = new Button();
             urlListBox = new ListBox();
             fileTypeLabel = new Label();
-            mp3Radio = new RadioButton();
-            opusRadio = new RadioButton();
             pictureBox2 = new PictureBox();
             toolTip1 = new ToolTip(components);
-            aacRadio = new RadioButton();
             thumbnailCheckbox = new CheckBox();
             addButton = new Button();
             button1 = new Button();
@@ -56,6 +53,7 @@
             nameBox = new TextBox();
             YouTubelabel = new Label();
             nameLable = new Label();
+            comboBox1 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -208,34 +206,6 @@
             fileTypeLabel.TabIndex = 10;
             fileTypeLabel.Text = "File Type :";
             // 
-            // mp3Radio
-            // 
-            mp3Radio.AutoSize = true;
-            mp3Radio.Checked = true;
-            mp3Radio.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            mp3Radio.Location = new Point(534, 68);
-            mp3Radio.Margin = new Padding(4, 5, 4, 5);
-            mp3Radio.Name = "mp3Radio";
-            mp3Radio.Size = new Size(81, 32);
-            mp3Radio.TabIndex = 13;
-            mp3Radio.TabStop = true;
-            mp3Radio.Text = ".MP3";
-            toolTip1.SetToolTip(mp3Radio, "MPEG-1 Audio Layer III");
-            mp3Radio.UseVisualStyleBackColor = true;
-            // 
-            // opusRadio
-            // 
-            opusRadio.AutoSize = true;
-            opusRadio.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            opusRadio.Location = new Point(633, 68);
-            opusRadio.Margin = new Padding(4, 5, 4, 5);
-            opusRadio.Name = "opusRadio";
-            opusRadio.Size = new Size(84, 32);
-            opusRadio.TabIndex = 14;
-            opusRadio.Text = ".OGG";
-            toolTip1.SetToolTip(opusRadio, "Ogg Vorbis");
-            opusRadio.UseVisualStyleBackColor = true;
-            // 
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
@@ -247,19 +217,6 @@
             pictureBox2.TabIndex = 15;
             pictureBox2.TabStop = false;
             toolTip1.SetToolTip(pictureBox2, "URL(s)");
-            // 
-            // aacRadio
-            // 
-            aacRadio.AutoSize = true;
-            aacRadio.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            aacRadio.Location = new Point(723, 68);
-            aacRadio.Margin = new Padding(4, 5, 4, 5);
-            aacRadio.Name = "aacRadio";
-            aacRadio.Size = new Size(79, 32);
-            aacRadio.TabIndex = 16;
-            aacRadio.Text = ".AAC";
-            toolTip1.SetToolTip(aacRadio, "Advanced Audio Coding");
-            aacRadio.UseVisualStyleBackColor = true;
             // 
             // thumbnailCheckbox
             // 
@@ -356,11 +313,40 @@
             nameLable.Size = new Size(0, 21);
             nameLable.TabIndex = 23;
             // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(539, 128);
+            comboBox1.Name = "fileTypeDropDown";
+            comboBox1.Size = new Size(244, 33);
+            comboBox1.TabIndex = 21;
+            comboBox1.DataSource = new string[]
+            {   
+                //Audio Files
+                "MP3",
+                "OOG",
+                "AAC",
+                "WAV",
+                "FLAC",
+                "M4A",
+                "WMA",
+                "ALAC",
+                //Video Files
+                "MP4",
+                "AVI",
+                "MKV",
+                "MOV",
+                "FLV",
+                "WEBM"
+            };
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(826, 573);
+            Controls.Add(comboBox1);
             Controls.Add(nameLable);
             Controls.Add(YouTubelabel);
             Controls.Add(nameBox);
@@ -369,10 +355,7 @@
             Controls.Add(button1);
             Controls.Add(addButton);
             Controls.Add(thumbnailCheckbox);
-            Controls.Add(aacRadio);
             Controls.Add(pictureBox2);
-            Controls.Add(opusRadio);
-            Controls.Add(mp3Radio);
             Controls.Add(fileTypeLabel);
             Controls.Add(urlListBox);
             Controls.Add(clearButton);
@@ -415,11 +398,8 @@
         private Button clearButton;
         private ListBox urlListBox;
         private Label fileTypeLabel;
-        private RadioButton mp3Radio;
-        private RadioButton opusRadio;
         private PictureBox pictureBox2;
         private ToolTip toolTip1;
-        private RadioButton aacRadio;
         private CheckBox thumbnailCheckbox;
         private ToolStripMenuItem darkModeToolStripMenuItem;
         private Button addButton;
@@ -429,5 +409,6 @@
         private TextBox nameBox;
         private Label YouTubelabel;
         private Label nameLable;
+        private ComboBox comboBox1;
     }
 }
