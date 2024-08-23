@@ -27,20 +27,7 @@ namespace YoutubeToMP3
 
         private async void downloadButton_ClickAsync(object sender, EventArgs e)
         {
-            string fileType = "";
-
-            if (mp3Radio.Checked)
-            {
-                fileType = "mp3"; // Define your file type for radioButton1
-            }
-            else if (opusRadio.Checked)
-            {
-                fileType = "ogg"; // Define your file type for radioButton2
-            }
-            else if (aacRadio.Checked)
-            {
-                fileType = "aac"; // Define your file type for radioButton3
-            }
+            string fileType = comboBox1.SelectedItem.ToString().ToLower();
 
             List<string> urls = new List<string>();
             foreach (var item in urlListBox.Items)
@@ -48,10 +35,11 @@ namespace YoutubeToMP3
                 urls.Add(item.ToString());
             }
 
+            int VideoNumber = -1;
             foreach (var url in urls)
             {
-                await download.DownloadAsync(url, progressBar, fileType);
-
+                VideoNumber++;
+                await download.DownloadAsync(url, progressBar, fileType, VideoNumber, fileBox.Text, nameBox.Text);
             }
 
             MessageBox.Show("All downloads complete!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -114,7 +102,6 @@ namespace YoutubeToMP3
             urlBox.Text = string.Empty;
             urlListBox.Items.Clear();
             thumbnailCheckbox.Checked = false;
-            mp3Radio.Checked = true;
         }
         private bool isDarkMode = false;
 
@@ -272,26 +259,13 @@ namespace YoutubeToMP3
 
         private void downloadSingleButton_Click(object sender, EventArgs e)
         {
-            string fileType = "";
-
-            if (mp3Radio.Checked)
-            {
-                fileType = "mp3"; // Define your file type for radioButton1
-            }
-            else if (opusRadio.Checked)
-            {
-                fileType = "ogg"; // Define your file type for radioButton2
-            }
-            else if (aacRadio.Checked)
-            {
-                fileType = "aac"; // Define your file type for radioButton3
-            }
+            string fileType = comboBox1.SelectedItem.ToString().ToLower();
 
             // Check if the thumbnail should be downloaded
             bool downloadThumbnail = thumbnailCheckbox.Checked;
 
             // Call the download method with the selected file type and thumbnail option
-            download.DownloadAsync(urlBox.Text, progressBar, fileType);
+            download.DownloadAsync(urlBox.Text, progressBar, fileType, 0, fileBox.Text, nameBox.Text);
 
 
         }
@@ -307,6 +281,22 @@ namespace YoutubeToMP3
             {
                 MessageBox.Show("Please select an item to remove.");
             }
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void urlBox_TextChanged(object sender, EventArgs e)
+        {
+            //string wow = download.getYouTubeName(urlBox.Text).Result;
+            //nameLable.Text = wow;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }
