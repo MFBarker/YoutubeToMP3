@@ -294,5 +294,10 @@ namespace YoutubeToMP3
             //string wow = download.getYouTubeName(urlBox.Text).Result;
             //nameLable.Text = wow;
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
