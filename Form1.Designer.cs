@@ -316,25 +316,25 @@
             // comboBox1
             // 
             comboBox1.DataSource = new string[]
-    {
-    "MP3",
-    "OOG",
-    "AAC",
-    "WAV",
-    "FLAC",
-    "M4A",
-    "WMA",
-    "ALAC",
-    "MP4",
-    "AVI",
-    "MKV",
-    "MOV",
-    "FLV",
-    "WEBM"
-    };
+            {
+                "MP3",
+                "OOG",
+                "AAC",
+                "WAV",
+                "FLAC",
+                "M4A",
+                "WMA",
+                "ALAC",
+                "MP4",
+                "AVI",
+                "MKV",
+                "MOV",
+                "FLV",
+                "WEBM"
+            };
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "MP3", "OOG", "AAC", "WAV", "FLAC", "M4A", "WMA", "ALAC", "MP4", "AVI", "MKV", "MOV", "FLV", "WEBM" });
+            //comboBox1.Items.AddRange(new object[] { "MP3", "OOG", "AAC", "WAV", "FLAC", "M4A", "WMA", "ALAC", "MP4", "AVI", "MKV", "MOV", "FLV", "WEBM" });
             comboBox1.Location = new Point(536, 69);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(244, 33);
