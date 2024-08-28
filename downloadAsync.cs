@@ -176,7 +176,7 @@ namespace YoutubeToMP3
             progress.Value = 0;
         }
 
-        public async Task<string> getYouTubeName(String url) 
+        public async void getYouTubeName(String url, Label output) 
         {
             try
             {
@@ -184,22 +184,30 @@ namespace YoutubeToMP3
                 var host = uri.Host.ToLower();
                 if (!host.Contains("youtube.com") && !host.Contains("youtu.be"))
                 {
-                    MessageBox.Show("Please enter a valid YouTube URL.", "Invalid URL", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return "";
+                    output.Text = "";
+                    return;
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show("Please enter a valid YouTube URL.", "Invalid URL", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return "";
+                output.Text = "";
+                return;
             }
 
             // Initialize YoutubeExplode client and fetch video metadata
             var youtube = new YoutubeClient();
-            var videoId = YoutubeExplode.Videos.VideoId.Parse(url);
-            var video = await youtube.Videos.GetAsync(videoId);
-            string videoTitle = video.Title;
-            return videoTitle;
+            try
+            {
+                var videoId = YoutubeExplode.Videos.VideoId.Parse(url);
+                var video = await youtube.Videos.GetAsync(videoId);
+                string videoTitle = video.Title;
+                output.Text = videoTitle;
+            }
+            catch (Exception)
+            {
+                output.Text = "";
+                return;
+            }
         }
     }
 }
